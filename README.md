@@ -1,2 +1,2 @@
-# areact-test
-react-test
+# react-test
+React.js playground
