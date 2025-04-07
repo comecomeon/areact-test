@@ -1,33 +1,150 @@
 .header {
     width: 100%;
-    background-color: #0d81e4;
-    color: white;
-    padding: 1rem 0rem;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     &__inner--common {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
     &__logo a {
         font-size: 1.5rem;
         font-weight: bold;
-        color: white;
-    }
-
-    &__nav ul {
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    &__nav a {
-        font-size: 1rem;
-        color: white;
+        color: #00ba91;
         text-decoration: none;
+    }
 
-        &:hover {
-            text-decoration: underline;
+    &__toggle {
+        display: none;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: #333;
+        cursor: pointer;
+    }
+
+    &__nav {
+        ul {
+            display: flex;
+            gap: 1.5rem;
+
+            li {
+                position: relative;
+
+                a,
+                span {
+                    font-size: 1rem;
+                    color: #333;
+                    text-decoration: none;
+                    cursor: pointer;
+                    position: relative;
+
+                    &:hover {
+                        color: #00ba91;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -4px;
+                        width: 0;
+                        height: 2px;
+                        background-color: #00ba91;
+                        transition: width 0.3s;
+                    }
+
+                    &:hover:after {
+                        width: 100%;
+                    }
+                }
+
+                // 드롭다운
+                &.has-submenu:hover .submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .submenu {
+                    position: absolute;
+                    top: 24px;
+                    left: 0;
+                    background: #fff;
+                    padding: 1rem;
+                    border: 1px solid #eee;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(10px);
+                    transition: all 0.3s ease;
+                    min-width: 140px;
+
+                    a {
+                        color: #333;
+
+                        &:hover {
+                            color: #00ba91;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ✅ 햄버거 관련 처리
+    @media (max-width: 768px) {
+        &__toggle {
+            display: block;
+            z-index: 1000;
+        }
+
+        &__nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+            // ✅ 이 클래스가 모바일에서도 작동하도록 조건 분리
+            &.is-open {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            ul {
+                flex-direction: column;
+                padding: 1rem 1.5rem;
+                gap: 1rem;
+
+                li {
+                    .submenu {
+                        position: static;
+                        transform: none;
+                        opacity: 1;
+                        visibility: visible;
+                        border: none;
+                        box-shadow: none;
+                        padding: 0.5rem 0;
+                    }
+                }
+            }
         }
     }
 }
