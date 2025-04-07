@@ -15,6 +15,7 @@ const Header = () => {
                         <li><Link to="/state01">state01</Link></li>
                         <li><Link to="/state02">state02</Link></li>
                         <li><Link to="/useeffect01">useEffect01</Link></li>
+                        <li><Link to="/useeffect02">useEffect02</Link></li>
                     </ul>
                 </nav>
             </div>

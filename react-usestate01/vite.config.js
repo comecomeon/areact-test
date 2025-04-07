@@ -32,4 +32,7 @@ export default defineConfig({
       '@api': path.resolve(__dirname, './src/api'),
     },
   },
+  server: {
+    port: 3000, // ✅ 여기서 포트번호 지정
+  },
 })

@@ -1,0 +1,72 @@
+.useeffect02 {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__inner--common {
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        font-family: 'Pretendard', sans-serif;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        &--item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            label {
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #444;
+            }
+
+            input {
+                padding: 0.75rem 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.2s ease;
+
+                &:focus {
+                    border-color: #00ba91;
+                    outline: none;
+                }
+            }
+        }
+
+        button[type='submit'] {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: #00ba91;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #019c7b;
+            }
+        }
+    }
+}
