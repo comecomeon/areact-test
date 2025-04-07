@@ -21,10 +21,10 @@ const State02 = () => {
         setIsTrue(!isTrue);
     }
     const handleArrayChange = () => {
-        setArray([...array, array.length + 1]);
+        setArray([...array, ++array.length]);
     }
     const handleObjectChange = () => {
-        setObject({ ...object, age: object.age + 1 });
+        setObject({ ...object, age: ++object.age});
     }
     const handleDateChange = () => {
         setDate(new Date());

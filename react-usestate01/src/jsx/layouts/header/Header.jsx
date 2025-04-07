@@ -7,13 +7,14 @@ const Header = () => {
         <header className="header">
             <div className="header__inner--common">
                 <h1 className="header__logo">
-                    <Link to="/">MegaStudy</Link>
+                    <Link to="/">React.js</Link>
                 </h1>
                 <nav className="header__nav">
                     <ul>
                         <li><Link to="/">홈</Link></li>
                         <li><Link to="/state01">state01</Link></li>
                         <li><Link to="/state02">state02</Link></li>
+                        <li><Link to="/useeffect01">useEffect01</Link></li>
                     </ul>
                 </nav>
             </div>
